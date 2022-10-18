@@ -119,10 +119,11 @@ function loadNextQuestion () {
     selectedOption.checked = false;
 	
     if(currentQuestion == totalQuestions - 1) {
-        nextButton.textContent = 'Finish';
+        nextButton.textContent = 'Zakończ';
     }
     if(currentQuestion == totalQuestions) {
-        container.style.display = 'none';
+        // container.style.display = 'none';
+        container.classList.add("d-none");
         result.innerHTML =
          `<h1 class="final-score">Twój wynik: ${totalScore}</h1>
          <div class="summary">
@@ -143,7 +144,11 @@ function loadNextQuestion () {
 function loadPreviousQuestion() {
     currentQuestion--;
     score.pop();
+    if(currentQuestion != totalQuestions - 1){
+      nextButton.textContent = 'Następne';
+    }
     generateQuestions(currentQuestion);
+    console.log(currentQuestion);
 }
 
 function restartQuiz(e) {
