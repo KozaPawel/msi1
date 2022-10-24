@@ -2,71 +2,184 @@
 
 const questions = [
   {
-    "question": "Age range?",
-    "answer1": "under 18",
+    "question": "Nie lubisz załatwiać spraw osobistych przy innych ludziach?",
+    "answer1": "Tak",
     "answer1Total": "1",
-    "answer2": "18 - 30",
-    "answer2Total": "2",
-    "answer3": "over 30",
-    "answer3Total": "3"
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
   },
   {
-    "question": "I am very imaginative.",
-    "answer1": "Agree",
+    "question": "Nie potrzebujesz pracy w zespole, ponieważ w pojedynkę dobrze sobie radzisz?",
+    "answer1": "Tak",
     "answer1Total": "1",
-    "answer2": "Neutral",
-    "answer2Total": "2",
-    "answer3": "Disagree",
-    "answer3Total": "3"
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
   },
   {
-    "question":
-      "Select in which order you would value these \"Money, Love & Career",
-    "answer1": "Love, Career, Money",
+    "question": "Łatwiej napisać ci e-maila opisującego twoje odczucia niż wyrazić je prosto w oczy drugiej osobie?",
+    "answer1": "Tak",
     "answer1Total": "1",
-    "answer2": "Money, Career, Love",
-    "answer2Total": "3",
-    "answer3": "Career, Love, Money",
-    "answer3Total": "2"
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
   },
   {
-    "question": "Best Sentence to describe you?",
-    "answer1": "You feel superior to other people.",
-    "answer1Total": "3",
-    "answer2": "You consider yourself more practical than creative.",
-    "answer2Total": "2",
-    "answer3":
-      "Winning a debate matters less to you than making sure no one gets upset.",
+    "question": "Nie lubisz spontanicznych spotkań/wyjazdów?",
+    "answer1": "Tak",
+    "answer1Total": "1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
+  },
+  {
+    "question": "Samotny wieczór w domu to dla ciebie dobry moment na przemyślenia i odpoczynek od ludzi?",
+    "answer1": "Tak",
+    "answer1Total": "1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
+  },
+  {
+    "question": "Przytłaczają cię zbyt rozmowne osoby?",
+    "answer1": "Tak",
+    "answer1Total": "1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
+  },
+  {
+    "question": "W piątkowy wieczór wybrałbyś kawiarnię lub małe bistro zamiast głośnego klubu?",
+    "answer1": "Tak",
+    "answer1Total": "1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
+  },
+  {
+    "question": "Sam nie wychodzisz z inicjatywą zapoznania się z kimś nowym, nawet jeśli dany człowiek cię zainteresował?",
+    "answer1": "Tak",
+    "answer1Total": "1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
+  },
+  {
+    "question": "Większość podjętych przez ciebie decyzji życiowych jest solidnie przemyślana?",
+    "answer1": "Tak",
+    "answer1Total": "1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
+  },
+  {
+    "question": "Czasami martwisz się bez wyraźnego powodu?",
+    "answer1": "Tak",
+    "answer1Total": "1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "-1"
+  },
+  {
+    "question": "Wolisz spędzać czas wolny w towarzystwie przyjaciół niż sam/sama w domu",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
     "answer3Total": "1"
   },
   {
-    "question": "Which best describes your relationship with food",
-    "answer1": "You tend to over-eat when you have company.",
-    "answer1Total": "1",
-    "answer2": "You tend to eat snacks secretly.",
-    "answer2Total": "2",
-    "answer3": "You prepare food and don\’t even look at the recipe.",
-    "answer3Total": "3"
-  },
-  {
-    "question":
-      "You make plans with a friend and they cancel on you, what do you do?",
-    "answer1":
-      "Say \"whatever\" and plan a night that'll be GREAT so they don't cancel again.",
-    "answer1Total": "3",
-    "answer2": "Feel hurt because you were looking forward to tonight.",
-    "answer2Total": "2",
-    "answer3": "No problem, you kinda wanted to stay home anyway.",
+    "question": "Podoba ci się bycie w centrum uwagi?",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
     "answer3Total": "1"
   },
   {
-    "question": "Which of the following colours do you like most?",
-    "answer1": "Black",
-    "answer1Total": "1",
-    "answer2": "Yellow or light blue",
-    "answer2Total": "2",
-    "answer3": "Red or orange",
-    "answer3Total": "3"
+    "question": "Często sam/sama nawiązujesz kontakt z obcymi ci ludźmi",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Uważasz, że ludziom można ufać?",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Rywalizacja cię nie paraliżuje, ale działa mobilizująco",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Porażki życiowe nie wywołują u ciebie smutku, a raczej motywują do dalszego działania",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Masz wielu znajomych, z którymi regularnie utrzymujesz kontakt na portalach społecznościowych",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Nie jesteś skrępowany, gdy poznajesz nowych ludzi i rozmawiasz z nimi po pierwszy raz",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Czy konsultujesz się z innymi, gdy musisz rozwiązać jakiś życiowy problem?",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Wolisz zabawną atmosferę niż powagę i opanowanie na spotkaniach towarzyskich",
+    "answer1": "Tak",
+    "answer1Total": "-1",
+    "answer2": "Nie mam zdania",
+    "answer2Total": "0",
+    "answer3": "Nie",
+    "answer3Total": "1"
   }
 ]
 
@@ -127,12 +240,10 @@ function loadNextQuestion () {
         result.innerHTML =
          `<h1 class="final-score">Twój wynik: ${totalScore}</h1>
          <div class="summary">
-            <h1>Summary</h1>
-            <p>Possible - Personality Traits, see below for a summary based on your results:</p>
-            <p>15 - 21- You Need Help</p>
-            <p>10 - 15 - Good Soul</p>
-            <p>5 - 10 - Meh </p>
-            <p>5 - Are You Even Real</p>
+            <h1>Podsumowanie</h1>
+            <p>10+ Jesteś introwertykiem</p>
+            <p>10:-10 Jesteś abiwalentykiem </p>
+            <p>-10 Jesteś ekstrawertykiem<p>
         </div>
         <button class="restart">Restart</button>
          `;
@@ -142,13 +253,16 @@ function loadNextQuestion () {
 }
 
 function loadPreviousQuestion() {
+    if(currentQuestion!=0){
     currentQuestion--;
     score.pop();
     if(currentQuestion != totalQuestions - 1){
+
       nextButton.textContent = 'Następne';
     }
     generateQuestions(currentQuestion);
     console.log(currentQuestion);
+}
 }
 
 function restartQuiz(e) {
