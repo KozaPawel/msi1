@@ -187,7 +187,7 @@ const questions = [
 let currentQuestion = 0;
 let score = [];
 let selectedAnswersData = [];
-const totalQuestions =questions.length;
+const totalQuestions = questions.length;
 
 const container = document.querySelector('.quiz-container');
 const questionEl = document.querySelector('.question');
@@ -198,84 +198,89 @@ const nextButton = document.querySelector('.next');
 const previousButton = document.querySelector('.previous');
 const restartButton = document.querySelector('.restart');
 const result = document.querySelector('.result');
+const resultContainer = document.querySelector('.result-container');
 
-function generateQuestions (index) {
-    const question = questions[index];
-    const option1Total = questions[index].answer1Total;
-    const option2Total = questions[index].answer2Total;
-    const option3Total = questions[index].answer3Total;
-    questionEl.innerHTML = `${index + 1}. ${question.question}`
-    option1.setAttribute('data-total', `${option1Total}`);
-    option2.setAttribute('data-total', `${option2Total}`);
-    option3.setAttribute('data-total', `${option3Total}`);
-    option1.innerHTML = `${question.answer1}`
-    option2.innerHTML = `${question.answer2}`
-    option3.innerHTML = `${question.answer3}`
+function generateQuestions(index) {
+  const question = questions[index];
+  const option1Total = questions[index].answer1Total;
+  const option2Total = questions[index].answer2Total;
+  const option3Total = questions[index].answer3Total;
+  questionEl.innerHTML = `${index + 1}. ${question.question}`
+  option1.setAttribute('data-total', `${option1Total}`);
+  option2.setAttribute('data-total', `${option2Total}`);
+  option3.setAttribute('data-total', `${option3Total}`);
+  option1.innerHTML = `${question.answer1}`
+  option2.innerHTML = `${question.answer2}`
+  option3.innerHTML = `${question.answer3}`
 }
 
 
-function loadNextQuestion () {
-    const selectedOption = document.querySelector('input[type="radio"]:checked');
-    if(!selectedOption) {
-        alert('Wybierz odpowiedź!');
-        return;
+function loadNextQuestion() {
+  const selectedOption = document.querySelector('input[type="radio"]:checked');
+  if (!selectedOption) {
+    alert('Wybierz odpowiedź!');
+    return;
+  }
+  const answerScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
+
+  score.push(answerScore);
+
+  selectedAnswersData.push()
+
+  const totalScore = score.reduce((total, currentNum) => total + currentNum);
+
+  currentQuestion++;
+  selectedOption.checked = false;
+
+  if (currentQuestion == totalQuestions - 1) {
+    nextButton.textContent = 'Zakończ';
+  }
+  if (currentQuestion == totalQuestions) {
+    // container.style.display = 'none';
+    container.classList.add("d-none");
+    resultContainer.classList.remove("d-none");
+    let wynik = "";
+    if (totalScore < -10) {
+      wynik = "ekstrawertykiem";
     }
-    const answerScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
-
-    score.push(answerScore);
-
-    selectedAnswersData.push()
-    
-    const totalScore = score.reduce((total, currentNum) => total + currentNum);
-
-    currentQuestion++;
-    selectedOption.checked = false;
-	
-    if(currentQuestion == totalQuestions - 1) {
-        nextButton.textContent = 'Zakończ';
+    else if (totalScore >= -10 && totalScore <= 10) {
+      wynik = "ambiwertykiem";
     }
-    if(currentQuestion == totalQuestions) {
-        // container.style.display = 'none';
-        container.classList.add("d-none");
-	result.classList.remove("d-none");
-        result.innerHTML =
-         `<h1 class="final-score">Twój wynik: ${totalScore}</h1>
-         <div class="summary">
-            <h1>Podsumowanie</h1>
-            <p>10+ Jesteś introwertykiem</p>
-            <p>10:-10 Jesteś abiwalentykiem </p>
-            <p>-10 Jesteś ekstrawertykiem<p>
-        </div>
-        <button class="restart">Restart</button>
+    else {
+      wynik = "introwertykiem";
+    }
+    result.innerHTML =
+      `<h1>Jesteś ${wynik}</h1>
+        <button class="restart btn btn-dark">Wykonaj test jeszcze raz</button>
          `;
-        return;
-    }
-    generateQuestions(currentQuestion);
+    return;
+  }
+  generateQuestions(currentQuestion);
 }
 
 function loadPreviousQuestion() {
-    if(currentQuestion!=0){
+  if (currentQuestion != 0) {
     currentQuestion--;
     score.pop();
-    if(currentQuestion != totalQuestions - 1){
+    if (currentQuestion != totalQuestions - 1) {
 
       nextButton.textContent = 'Następne';
     }
     generateQuestions(currentQuestion);
     console.log(currentQuestion);
-}
+  }
 }
 
 function restartQuiz(e) {
-    if(e.target.matches('button')) {
+  if (e.target.matches('button')) {
     currentQuestion = 0;
     score = [];
     location.reload();
-    }
+  }
 
 }
 
 generateQuestions(currentQuestion);
 nextButton.addEventListener('click', loadNextQuestion);
-previousButton.addEventListener('click',loadPreviousQuestion);
-result.addEventListener('click',restartQuiz);
+previousButton.addEventListener('click', loadPreviousQuestion);
+result.addEventListener('click', restartQuiz);
