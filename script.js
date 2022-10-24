@@ -237,6 +237,7 @@ function loadNextQuestion () {
     if(currentQuestion == totalQuestions) {
         // container.style.display = 'none';
         container.classList.add("d-none");
+	result.classList.remove("d-none");
         result.innerHTML =
          `<h1 class="final-score">Twój wynik: ${totalScore}</h1>
          <div class="summary">
