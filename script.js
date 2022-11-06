@@ -1,5 +1,3 @@
-// QUESTIONS
-
 const questions = [
   {
     "question": "Nie lubisz załatwiać spraw osobistych przy innych ludziach?",
@@ -186,7 +184,6 @@ const questions = [
 
 let currentQuestion = 0;
 let score = [];
-let selectedAnswersData = [];
 const totalQuestions = questions.length;
 
 const container = document.querySelector('.quiz-container');
@@ -225,10 +222,6 @@ function loadNextQuestion() {
 
   score.push(answerScore);
 
-  selectedAnswersData.push()
-
-  const totalScore = score.reduce((total, currentNum) => total + currentNum);
-
   currentQuestion++;
   selectedOption.checked = false;
 
@@ -236,7 +229,8 @@ function loadNextQuestion() {
     nextButton.textContent = 'Zakończ';
   }
   if (currentQuestion == totalQuestions) {
-    // container.style.display = 'none';
+    const totalScore = score.reduce((total, currentNum) => total + currentNum);
+
     container.classList.add("d-none");
     resultContainer.classList.remove("d-none");
     let wynik = "";
@@ -267,7 +261,6 @@ function loadPreviousQuestion() {
       nextButton.textContent = 'Następne';
     }
     generateQuestions(currentQuestion);
-    console.log(currentQuestion);
   }
 }
 
